@@ -6,10 +6,14 @@ public class FakeCategorySource implements CategorySource {
 
     private final ArrayList<Category> mCategories = new ArrayList<>();
 
-    public FakeCategorySource() {
-        for (int i = 0; i < 10; i++) {
+    public FakeCategorySource(int size) {
+        for (int i = 0; i < size; i++) {
             mCategories.add(new FakeCategory());
         }
+    }
+
+    public FakeCategorySource() {
+        this(10);
     }
 
     @Override
