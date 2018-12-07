@@ -1,10 +1,13 @@
-package com.example.elena.moscowinfo.model;
+package com.example.elena.moscowinfo.web;
 
-import com.example.elena.moscowinfo.web.Dataset;
-import com.example.elena.moscowinfo.web.MoscowDataSetApi;
+import com.example.elena.moscowinfo.model.Category;
+import com.example.elena.moscowinfo.model.CategorySource;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import androidx.annotation.NonNull;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -41,5 +44,15 @@ public class WebCategorySource implements CategorySource {
     @Override
     public Category onPosition(int position) {
         return new WebCategory(mDatasets.get(position));
+    }
+
+    @NonNull
+    @Override
+    public Iterator<Category> iterator() {
+        List<Category> categories = new ArrayList<>();
+        for (Dataset dataset : mDatasets) {
+            categories.add(new WebCategory(dataset));
+        }
+        return categories.iterator();
     }
 }

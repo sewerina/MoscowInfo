@@ -4,5 +4,6 @@ public class Dataset {
 
     public String Caption;
 
+    public int Id;
 
 }

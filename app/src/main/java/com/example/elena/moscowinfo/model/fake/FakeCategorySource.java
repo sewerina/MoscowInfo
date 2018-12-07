@@ -1,6 +1,12 @@
-package com.example.elena.moscowinfo.model;
+package com.example.elena.moscowinfo.model.fake;
+
+import com.example.elena.moscowinfo.model.Category;
+import com.example.elena.moscowinfo.model.CategorySource;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import androidx.annotation.NonNull;
 
 public class FakeCategorySource implements CategorySource {
 
@@ -24,5 +30,11 @@ public class FakeCategorySource implements CategorySource {
     @Override
     public Category onPosition(int position) {
         return mCategories.get(position);
+    }
+
+    @NonNull
+    @Override
+    public Iterator<Category> iterator() {
+        return mCategories.iterator();
     }
 }

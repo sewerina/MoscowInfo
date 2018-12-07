@@ -14,4 +14,7 @@ public class CategoryEntity {
 
     @ColumnInfo(name = "caption")
     public String mCaption;
+
+    @ColumnInfo(name = "imageUrl")
+    public String mImageUrl;
 }

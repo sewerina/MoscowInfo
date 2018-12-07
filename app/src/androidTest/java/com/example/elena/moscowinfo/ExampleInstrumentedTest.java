@@ -3,9 +3,8 @@ package com.example.elena.moscowinfo;
 import android.content.Context;
 
 import com.example.elena.moscowinfo.model.Category;
-import com.example.elena.moscowinfo.model.DatabaseCategory;
-import com.example.elena.moscowinfo.model.DatabaseCategorySource;
-import com.example.elena.moscowinfo.model.FakeCategorySource;
+import com.example.elena.moscowinfo.database.DatabaseCategorySource;
+import com.example.elena.moscowinfo.model.fake.FakeCategorySource;
 
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;

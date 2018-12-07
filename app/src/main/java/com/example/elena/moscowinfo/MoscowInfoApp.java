@@ -1,10 +1,8 @@
 package com.example.elena.moscowinfo;
 
 import android.app.Application;
-
-import com.example.elena.moscowinfo.model.DatabaseCategorySource;
+import com.example.elena.moscowinfo.model.CategorySources;
 import com.example.elena.moscowinfo.ui.CategoryListViewModel;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -26,7 +24,7 @@ public class MoscowInfoApp extends Application implements ViewModelProvider.Fact
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass == CategoryListViewModel.class) {
-            return (T) new CategoryListViewModel(new DatabaseCategorySource(this, "moscow.db"));
+            return (T) new CategoryListViewModel(new CategorySources(this));
         }
         return null;
     }
