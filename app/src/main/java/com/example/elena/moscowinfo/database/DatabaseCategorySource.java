@@ -47,6 +47,7 @@ public class DatabaseCategorySource implements CategorySource {
 
         for (Category category : categories) {
             CategoryEntity categoryEntity = new CategoryEntity();
+            categoryEntity.mId = category.id();
             categoryEntity.mCaption = category.text();
             categoryEntity.mImageUrl = category.image();
             entities.add(categoryEntity);

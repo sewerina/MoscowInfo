@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Moscow Info</string>
     <string name="menu_filter">Фильтр</string>
+    <string name="btn_moreDetails">Подробнее</string>
 </resources>

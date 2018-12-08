@@ -134,7 +134,7 @@ public class CategoryListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Intent intent = CategoryActivity.newIntent(getActivity(), mCategoryPresentation.mTextView.getText().toString());
+            Intent intent = mCategoryPresentation.navigateToCategoryActivity();
             startActivity(intent);
         }
     }

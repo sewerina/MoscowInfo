@@ -33,19 +33,20 @@ public class ExampleInstrumentedTest {
         DatabaseCategorySource source = new DatabaseCategorySource(appContext);
 
         FakeCategorySource fakeCategorySource = new FakeCategorySource();
-        Category cat1 = fakeCategorySource.onPosition(0);
-        Category cat2 = fakeCategorySource.onPosition(3);
-        Category cat3 = fakeCategorySource.onPosition(5);
-        List<Category> categories = new ArrayList<>();
-        categories.add(cat1);
-        categories.add(cat2);
-        categories.add(cat3);
+//        Category cat1 = fakeCategorySource.onPosition(0);
+//        Category cat2 = fakeCategorySource.onPosition(3);
+//        Category cat3 = fakeCategorySource.onPosition(5);
+//        List<Category> categories = new ArrayList<>();
+//        categories.add(cat1);
+//        categories.add(cat2);
+//        categories.add(cat3);
 
 
-        source.addCategories(categories);
+        source.addCategories(fakeCategorySource);
         assertNotNull(source);
         assertTrue(source.size() > 0);
         assertEquals(source.onPosition(1).text(), "Fake Category");
+        assertTrue(source.onPosition(6).id() > 0);
 
         assertEquals("com.example.elena.moscowinfo", appContext.getPackageName());
     }

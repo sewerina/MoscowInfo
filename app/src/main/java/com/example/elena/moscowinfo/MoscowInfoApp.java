@@ -3,6 +3,8 @@ package com.example.elena.moscowinfo;
 import android.app.Application;
 import com.example.elena.moscowinfo.model.CategorySources;
 import com.example.elena.moscowinfo.ui.CategoryListViewModel;
+import com.example.elena.moscowinfo.ui.CategoryViewModel;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -25,7 +27,8 @@ public class MoscowInfoApp extends Application implements ViewModelProvider.Fact
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass == CategoryListViewModel.class) {
             return (T) new CategoryListViewModel(new CategorySources(this));
+        } else {
+            return (T) new CategoryViewModel();
         }
-        return null;
     }
 }

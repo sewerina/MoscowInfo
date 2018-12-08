@@ -5,4 +5,6 @@ public interface Category {
     String text();
 
     String image();
+
+    int id();
 }

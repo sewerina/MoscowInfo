@@ -20,4 +20,9 @@ public class WebCategory implements Category {
         String value = String.format(Locale.ROOT, "https://apidata.mos.ru/v1/datasets/%d/image?api_key=57e3d14c8a573455a02dae758bb975dc", mDataset.Id);
         return value;
     }
+
+    @Override
+    public int id() {
+        return mDataset.Id;
+    }
 }

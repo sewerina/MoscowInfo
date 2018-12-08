@@ -1,6 +1,5 @@
 package com.example.elena.moscowinfo.database;
 
-import com.example.elena.moscowinfo.database.CategoryEntity;
 import com.example.elena.moscowinfo.model.Category;
 
 public class DatabaseCategory implements Category {
@@ -18,5 +17,10 @@ public class DatabaseCategory implements Category {
     @Override
     public String image() {
         return mCategoryEntity.mImageUrl;
+    }
+
+    @Override
+    public int id() {
+        return mCategoryEntity.mId;
     }
 }

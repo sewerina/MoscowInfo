@@ -41,6 +41,7 @@ public class CategorySourceTest {
         assertEquals(category.text(), "Fake Category");
         assertNotNull(category.text());
         assertFalse(category.text().isEmpty());
+        assertTrue(category.id() > 0);
     }
 
     @Test
@@ -53,6 +54,7 @@ public class CategorySourceTest {
 
         assertEquals(category.text(), "TestCaption");
         assertEquals(category.image(), "https://apidata.mos.ru/v1/datasets/456/image?api_key=57e3d14c8a573455a02dae758bb975dc");
+        assertEquals(category.id(), 456);
     }
 
     @Test
@@ -64,6 +66,8 @@ public class CategorySourceTest {
         assertNotNull(webCategoryDetails.fullDescription());
 
         assertEquals(webCategoryDetails.department(), "Департамент здравоохранения города Москвы");
-        assertEquals(webCategoryDetails.description(), "Больницы взрослые, распо…х границ города Москвы.");
+        assertEquals(webCategoryDetails.description(), "Больницы взрослые, расположенные в пределах установленных границ города Москвы.");
     }
+
+
 }

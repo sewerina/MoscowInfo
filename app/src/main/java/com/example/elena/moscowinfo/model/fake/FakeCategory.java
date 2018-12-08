@@ -5,11 +5,14 @@ import com.example.elena.moscowinfo.model.Category;
 public class FakeCategory implements Category {
     private final String mValue;
 
+    private int mId;
+
     public FakeCategory(String value) {
         mValue = value;
     }
 
-    public FakeCategory() {
+    public FakeCategory(int id) {
+        mId = id;
         mValue = "Fake Category";
     }
 
@@ -21,5 +24,10 @@ public class FakeCategory implements Category {
     @Override
     public String image() {
         return null;
+    }
+
+    @Override
+    public int id() {
+        return mId;
     }
 }
