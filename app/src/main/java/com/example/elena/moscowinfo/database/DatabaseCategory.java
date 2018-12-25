@@ -23,4 +23,5 @@ public class DatabaseCategory implements Category {
     public int id() {
         return mCategoryEntity.mId;
     }
+
 }

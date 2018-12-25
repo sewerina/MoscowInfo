@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_departmentCaption"
@@ -18,13 +19,20 @@
 
     <Button
         android:id="@+id/btn_moreDetails"
-        android:text="@string/btn_moreDetails"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/btn_moreDetails" />
 
-    <TextView
-        android:id="@+id/tv_fullDescription"
+    <Switch
+        android:id="@+id/switch_favourites"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:showText="true"
+        android:text="В избранное"
+        android:textOff="Нет"
+        android:textOn="Да"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:theme="@style/SwitchFavourites" />
 
 </LinearLayout>

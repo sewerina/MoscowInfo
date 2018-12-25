@@ -67,6 +67,11 @@ public class DatabaseCategorySource implements CategorySource {
         return new DatabaseCategory(mCategoryEntities.get(position));
     }
 
+    @Override
+    public void update() {
+
+    }
+
     @NonNull
     @Override
     public Iterator<Category> iterator() {

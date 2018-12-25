@@ -28,6 +28,11 @@ public class FilteredCategorySource implements CategorySource {
         return mCategories.get(position);
     }
 
+    @Override
+    public void update() {
+
+    }
+
     @NonNull
     @Override
     public Iterator<Category> iterator() {

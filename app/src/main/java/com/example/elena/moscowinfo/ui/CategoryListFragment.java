@@ -47,7 +47,7 @@ public class CategoryListFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mCategoryListViewModel = ViewModelProviders.of(this, MoscowInfoApp.factory()).get(CategoryListViewModel.class);
+        mCategoryListViewModel = ViewModelProviders.of(getActivity(), MoscowInfoApp.factory()).get(CategoryListViewModel.class);
 
         setHasOptionsMenu(true);
     }
@@ -116,6 +116,12 @@ public class CategoryListFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mCategoryListViewModel.updateCategorySource();
     }
 
     private class CategoryHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

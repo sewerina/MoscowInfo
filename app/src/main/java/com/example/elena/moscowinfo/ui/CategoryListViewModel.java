@@ -1,9 +1,11 @@
 package com.example.elena.moscowinfo.ui;
 
+import com.example.elena.moscowinfo.database.FavouriteCategorySource;
 import com.example.elena.moscowinfo.model.CategorySource;
 import com.example.elena.moscowinfo.model.CategorySources;
 import com.example.elena.moscowinfo.database.DatabaseCategorySource;
 import com.example.elena.moscowinfo.model.FilteredCategorySource;
+import com.example.elena.moscowinfo.model.fake.FakeCategorySource;
 import com.example.elena.moscowinfo.web.WebCategorySource;
 
 import java.util.concurrent.Callable;
@@ -20,6 +22,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class CategoryListViewModel extends ViewModel {
     public final MutableLiveData<CategorySource> mCategorySource = new MutableLiveData<>();
+
     private final Action mHideRefresh = new Action() {
         @Override
         public void run() throws Exception {
@@ -95,6 +98,13 @@ public class CategoryListViewModel extends ViewModel {
         mDisposable.add(subscribe);
     }
 
+    public void showFavourites() {
+        mCategorySource.postValue(mCategorySources.favouriteCategorySource());
+    }
+
+    public void showAll(){
+        mCategorySource.postValue(mCategorySources.databaseCategorySource());
+    }
 
     @Override
     protected void onCleared() {
@@ -107,4 +117,11 @@ public class CategoryListViewModel extends ViewModel {
         mCategorySource.setValue(new FilteredCategorySource(currentSource, query));
     }
 
+    public void updateCategorySource() {
+        CategorySource value = mCategorySource.getValue();
+        if (value != null) {
+            value.update();
+            mCategorySource.postValue(value);
+        }
+    }
 }

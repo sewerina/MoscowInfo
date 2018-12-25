@@ -7,4 +7,5 @@ public interface Category {
     String image();
 
     int id();
+
 }

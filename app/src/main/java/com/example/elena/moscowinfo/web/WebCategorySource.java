@@ -46,6 +46,11 @@ public class WebCategorySource implements CategorySource {
         return new WebCategory(mDatasets.get(position));
     }
 
+    @Override
+    public void update() {
+
+    }
+
     @NonNull
     @Override
     public Iterator<Category> iterator() {
